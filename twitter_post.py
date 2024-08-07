@@ -3,10 +3,10 @@ import tweepy
 import random
 
 # Twitter API credentials
-consumer_key = '8gaUrdm20V4176RiMYsOUaZh8'
-consumer_secret = 'Tgf0ZmQkr2raSFIohDVJqNcVRmrS9kJ57UfVW0CeZJCldhPID2'
-access_token = 'lTjYrKqGDgmJ9MIfO1z8mPfaTvki661rAWm65jdYQfJNC'
-access_token_secret = 'lTjYrKqGDgmJ9MIfO1z8mPfaTvki661rAWm65jdYQfJNC'
+consumer_key = 'W5S0ADWUHE8BVkOnSSZbbU4eh'
+consumer_secret = 'K0kRM8OsPPta4pkj3T3ACDlucW6nRZfBKgh7pgmXYSg1p3zGnF'
+access_token = '1817116431974379520-bFTWnfmnLw4jeJwQsiPukAwpvaStIk'
+access_token_secret = 'EBQcQjNKa6wDR6gYPwfjiIXlJJG7g2bXuSzbH6yjEybga'
 
 # Set up Twitter API
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
