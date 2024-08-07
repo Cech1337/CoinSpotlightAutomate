@@ -60,7 +60,5 @@ try:
     tweet = f"New post: {post_title} {post_link} {mentions_str}"
     api.update_status(tweet)
     print("Tweet posted successfully!")
-except tweepy.TweepError as e:
-    print(f"Twitter API error: {e}")
-except Exception as e:
+except tweepy.errors.TweepyException as e:
     print(f"An error occurred: {e}")
