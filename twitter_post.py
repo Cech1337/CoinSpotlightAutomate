@@ -2,23 +2,16 @@ import feedparser
 import tweepy
 import random
 
-# Twitter API credentials
+# Twitter API credentials (replace with your own credentials)
 consumer_key = 'W5S0ADWUHE8BVkOnSSZbbU4eh'
 consumer_secret = 'K0kRM8OsPPta4pkj3T3ACDlucW6nRZfBKgh7pgmXYSg1p3zGnF'
 access_token = '1817116431974379520-bFTWnfmnLw4jeJwQsiPukAwpvaStIk'
 access_token_secret = 'EBQcQjNKa6wDR6gYPwfjiIXlJJG7g2bXuSzbH6yjEybga'
 
-# Bearer Token (for OAuth 2.0 requests)
-bearer_token = 'SnpmNjNjRVdXSEpnYksxM05HZGc6MTpjaQ'
-
 # Set up Twitter API with OAuth 1.0a
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
-api = tweepy.API(auth)
-
-# Example of using the Bearer Token for application-only requests
-# Note: Tweepy handles OAuth 2.0 Bearer Token internally for certain operations
-# If needed, you can set it for specific endpoints
+api = tweepy.API(auth, wait_on_rate_limit=True)
 
 # List of Twitter mentions
 mentions = [
@@ -67,5 +60,7 @@ try:
     tweet = f"New post: {post_title} {post_link} {mentions_str}"
     api.update_status(tweet)
     print("Tweet posted successfully!")
+except tweepy.TweepError as e:
+    print(f"Twitter API error: {e}")
 except Exception as e:
     print(f"An error occurred: {e}")
