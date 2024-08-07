@@ -1,0 +1,3 @@
+echo "*.log" >> .gitignore
+echo "*.tmp" >> .gitignore
+echo "*.DS_Store" >> .gitignore
